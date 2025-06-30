@@ -1,0 +1,60 @@
+.user-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.user-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.user-card:hover::after {
+  opacity: 1;
+}
+
+.overlay-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.user-card:hover .overlay-actions {
+  opacity: 1;
+}
+
+.overlay-actions button {
+  background: #007BFF;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-actions button:hover {
+  background: #0056b3;
+}
+
+.overlay-actions button.delete-btn {
+  background: #f44336;
+}
+
+.overlay-actions button.delete-btn:hover {
+  background: #c62828;
+}
